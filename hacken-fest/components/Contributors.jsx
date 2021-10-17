@@ -17,8 +17,9 @@ const Contributors = ({ data }) => {
     return (
         <div>
             <Grid my="12" templateColumns={{ sm: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(5, 1fr)" }} gap={6} p={5}>
-                {data.map(d => (
+                {data.map((d, i) => (
                     <ContributorCard
+                        key={i}
                         name={d['name']}
                         username={d['login']}
                         profile_url={d['html_url']}
