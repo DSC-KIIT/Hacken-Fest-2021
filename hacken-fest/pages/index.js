@@ -55,7 +55,7 @@ export async function getStaticProps() {
     if (!user['url']) return null
     let response = await fetch(user['url'], {
       headers: {
-        "Authorization": "Basic anVuYWlkcmFoaW06Z2hwX2F1Tld5b0RiQlBpV21YMnI4RHZ5VkpxS2x5bnVPSDA0dHVERg=="
+        "Authorization": process.env.GITHUB_TOKEN
       }
     })
 
