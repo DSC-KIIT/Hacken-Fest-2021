@@ -1,3 +1,4 @@
+import Head from "next/head"
 import Footer from "../components/Footer"
 import Contributors from "../components/Contributors"
 import Home from "../components/Home"
@@ -5,6 +6,11 @@ import Home from "../components/Home"
 const Index = (props) => {
   return (
     <div>
+      <Head>
+        <title>Hacken Fest 2021</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+
       <Home></Home>
       <Contributors data={props.data}></Contributors>
       <Footer></Footer>

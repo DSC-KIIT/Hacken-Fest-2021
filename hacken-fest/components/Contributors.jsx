@@ -16,7 +16,7 @@ const ContributorCard = ({ name, username, profile_url, avatar_url}) => {
 const Contributors = ({ data }) => {
     return (
         <div>
-            <Grid templateColumns={{ sm: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(5, 1fr)" }} gap={6} p={5}>
+            <Grid my="12" templateColumns={{ sm: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(5, 1fr)" }} gap={6} p={5}>
                 {data.map(d => (
                     <ContributorCard
                         name={d['name']}
