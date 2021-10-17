@@ -1,17 +1,18 @@
 import Footer from "../components/Footer"
 import Contributors from "../components/Contributors"
+import Home from "../components/Home"
 
-const Home = (props) => {
+const Index = (props) => {
   return (
     <div>
-      I am the Hacken Site
+      <Home></Home>
       <Contributors data={props.data}></Contributors>
       <Footer></Footer>
     </div>
   )
 }
 
-export default Home
+export default Index
 
 export async function getStaticProps() {
   const repositories = [

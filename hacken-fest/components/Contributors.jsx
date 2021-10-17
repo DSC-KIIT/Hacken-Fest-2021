@@ -1,17 +1,13 @@
 import { LinkBox, LinkOverlay, Grid, Avatar, Text, HStack, VStack } from "@chakra-ui/react"
 
-const ContributorCard = ({ name, username, profile_url, avatar_url, followers, following }) => {
+const ContributorCard = ({ name, username, profile_url, avatar_url}) => {
     return (
         <LinkBox borderRadius="lg" borderWidth="1px" p={4}>
-            <LinkOverlay href={profile_url}></LinkOverlay>
-            <VStack alignItems="center">
+            <LinkOverlay href={profile_url} target="_blank"></LinkOverlay>
+            <VStack alignItems="center" justify="center">
                 <Avatar src={avatar_url} size="2xl"></Avatar>
                 <Text fontSize="xl" fontWeight="bold">{name}</Text>
                 <Text>@{username}</Text>
-                <HStack>
-                    <Text>{followers} Followers</Text>
-                    <Text>{following} Following</Text>
-                </HStack>
             </VStack>
         </LinkBox>
     )
@@ -27,8 +23,6 @@ const Contributors = ({ data }) => {
                         username={d['login']}
                         profile_url={d['html_url']}
                         avatar_url={d['avatar_url']}
-                        followers={d['followers']}
-                        following={d['following']}
                     ></ContributorCard>
                 ))}
             </Grid>
